@@ -1,0 +1,133 @@
+@import 'global'
+@import 'variables'
+@import 'messageComposer'
+@import 'colors'
+@import 'emojis'
+
+.thread-screen
+  $editorLineHeight = 30px
+
+  background-color $sand
+
+  header
+    $lineHeight = 30px
+
+    .icon, .profile-image, h1
+      display table-cell
+
+    .icon
+      iconSize($lineHeight)
+
+    .profile-image img
+        margin 0 10px
+
+        height $lineHeight
+        width $lineHeight
+
+        border-radius $lineHeight
+
+  .unread-notification
+    position fixed
+    top $headerHeight
+    z-index 1
+
+    width 100%
+    height 30px
+    line-height 30px
+
+    text-align center
+    color white
+    background-color $greenGlowing
+
+    box-shadow 0 1px 3px 0 rgba(0,0,0,0.5)
+
+  footer
+    background-color transparent
+    font-size $editorLineHeight
+    height 2.5em /* Calculated from editor definition */
+    overflow-y visible
+
+    /* Editor values are calculated from editor definition */
+    .message-composer
+      height 2em
+
+      > div:first-of-type
+        position absolute
+        bottom 0.25em
+
+        width calc(100% - 2.5em)
+
+        .icon-camera
+          bottom 0.5em
+          right 1em
+
+      > div:last-of-type
+        height 1.5em
+
+  ul
+    position relative
+    top $headerHeight
+    height "calc(100% - %s)" % ($headerHeight + $editorLineHeight*2 + 10)
+
+    overflow-y auto
+
+    li
+
+      blockquote
+        display inline-block
+        max-width 85%
+        overflow-wrap break-word
+
+        margin 10px
+        padding 5px
+
+        background-color white
+
+        border-radius 5px
+        box-shadow 0 0 3px 0 rgba(0,0,0,0.25)
+
+        .image
+          display block
+
+          text-align center
+
+          img
+            max-width 100%
+
+            border-radius 5px
+
+        p
+          display inline
+
+        .profile
+          margin-bottom 0.5em
+
+          .profile-image, span
+            display inline
+
+          span
+            margin-left 0.5em
+
+            font-weight bold
+
+          img
+            width 1em
+            height 1em
+            border-radius 1em
+
+        .delivery-status, .sent-time
+          float right
+          position relative
+          top 0.25em
+          margin-left 0.25em
+
+          color $greyLight
+          font-size 0.8em
+
+      &.outgoing
+        text-align right
+
+        blockquote
+          background-color $greenLight
+
+          text-align left

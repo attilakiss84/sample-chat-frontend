@@ -1,0 +1,53 @@
+{
+  "name": "sample-chat-frontend",
+  "version": "0.0.1",
+  "description": "Sample frontend for imaginary chat application",
+  "scripts": {
+    "start": "node server.js",
+    "lint": "eslint src",
+    "test": "jest"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "boilerplate",
+    "hot",
+    "reload",
+    "hmr",
+    "live",
+    "edit",
+    "webpack"
+  ],
+  "author": "Attila Kiss <attila.kiss.84@gmail.com> (http://github.com/attilakiss84)",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "babel-core": "^6.0.20",
+    "babel-eslint": "^4.1.3",
+    "babel-jest": "^14.1.0",
+    "babel-loader": "^6.0.1",
+    "babel-preset-es2015": "^6.0.15",
+    "babel-preset-react": "^6.0.15",
+    "babel-preset-stage-0": "^6.0.15",
+    "eslint": "^1.10.3",
+    "eslint-plugin-react": "^3.6.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-stylus": "^2.5.0",
+    "gulp-watch": "^4.3.9",
+    "jest": "^14.1.0",
+    "react-addons-test-utils": "^0.14.6",
+    "react-hot-loader": "^1.3.0",
+    "react-test-renderer": "^15.3.1",
+    "stylus": "^0.54.5",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.1"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "flux": "^2.1.1",
+    "immutable": "^3.8.1",
+    "md5": "^2.1.0",
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6"
+  }
+}

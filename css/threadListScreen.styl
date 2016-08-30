@@ -1,0 +1,123 @@
+@import 'colors'
+@import 'icons'
+@import 'global'
+@import 'emojis'
+
+.thread-list-screen
+
+  padding-top $headerHeight
+
+  header
+
+    h1, .search
+      display table-cell
+
+    h1
+      padding-right 20px
+
+    .search
+      $searchBarIconSize = 30px
+
+      width 100%
+      border-bottom thin solid rgba(255,255,255,0.3)
+
+      input
+        vertical-align top
+        padding-left 10px
+
+        width "calc(100% - %s)" % $searchBarIconSize
+        height $searchBarIconSize
+
+        background-color $greenDark
+        color white
+
+        outline none
+        border none
+
+      .icon
+        iconSize($searchBarIconSize)
+
+        &.icon-remove
+          position relative
+          margin-left -($searchBarIconSize)
+
+  ul
+    li
+      $entryPadding = 15px
+      $profileImageHeight = 50px
+      $entryHeight = $profileImageHeight + ($entryPadding*2)
+      $dateFieldWidth = 75px
+
+      padding 0 $entryPadding
+
+      > div
+        display inline-block
+        height $entryHeight
+        vertical-align top
+
+        padding $entryPadding 0
+
+        color $greyLight
+
+        &.profile-image
+          display inline-block
+          overflow hidden
+
+          img
+            width $profileImageHeight
+            height $profileImageHeight
+            border-radius ($profileImageHeight/2)
+
+        &.info, &.status
+          border-bottom thin solid $greyUltraLight
+
+          div
+            display block
+            height ($profileImageHeight/2)
+            width 100%
+            line-height ($profileImageHeight/2)
+
+        &.info
+          $infoBlockWidthDeduction = $profileImageHeight + $dateFieldWidth
+          width "calc(100% - %s)" % $infoBlockWidthDeduction
+
+          padding-left $entryPadding
+
+          .thread-name
+            font-weight bold
+            color $greyDark
+
+          .message-text p
+            overflow hidden
+            text-overflow ellipsis
+            white-space nowrap
+
+            .icon
+              iconSize(1em)
+
+        &.status
+          width $dateFieldWidth
+
+          text-align center
+
+          &.unread div
+            &:first-of-type
+              color $greenGlowing
+
+            &:last-of-type
+              $unreadBadgeSize = 24px
+
+              display inline-block
+              color white
+              background-color $greenGlowing
+              width $unreadBadgeSize
+              height $unreadBadgeSize
+              line-height $unreadBadgeSize
+              border-radius ($unreadBadgeSize/2)
+              font-size ($unreadBadgeSize/2)
+
+
+      &:last-of-type
+        > div
+          &.info, &.status
+            border-bottom none

@@ -1,0 +1,64 @@
+@import 'variables'
+@import 'colors'
+@import 'icons'
+
+html
+  height 100%
+
+.hidden
+  display none !important
+
+body
+  height 100%
+  width 100%
+
+  overflow-y auto
+
+  font-family Arial
+  font-size 16px
+
+  $headerHeight = 60px
+
+  .chat-application
+    height 100%
+
+    input[type="file"]
+      display none !important
+
+    > article
+      height 100%
+
+      header
+        position fixed
+        z-index 1
+        top 0
+
+        width 100%
+        height $headerHeight
+
+        padding 15px
+
+        color white
+        background-color $greenDark
+
+        box-shadow 0 1px 3px 0 rgba(0,0,0,0.5)
+
+        h1
+          vertical-align middle
+
+          font-size 20px
+          font-weight bold
+
+      footer
+        position fixed
+        z-index 1
+        bottom 0
+
+        width 100%
+
+    .delivery-status
+      &.seen
+        color $blue !important
+
+  a, a:visited
+    color $blueAndroid
